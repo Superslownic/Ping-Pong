@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace PingPong
 {
-    public class InputSystem : MonoBehaviour, IPointerDownHandler, IDragHandler
+    public class PlayerInput : MonoBehaviour, IInput, IPointerDownHandler, IDragHandler
     {
         public Vector3 TouchPosition { get; private set; }
 
