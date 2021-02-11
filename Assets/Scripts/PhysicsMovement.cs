@@ -3,7 +3,7 @@
 namespace PingPong
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class MoveComponent : MonoBehaviour
+    public class PhysicsMovement : MonoBehaviour
     {
         [SerializeField] private float _speed;
 
@@ -26,13 +26,14 @@ namespace PingPong
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            Move(new Vector2(0.5f, -0.5f));
         }
 
         private void Update()
         {
             if (IsMoving == false) return;
             
-            _rigidbody.velocity = Direction;
+            _rigidbody.velocity = Direction * _speed;
         }
     }
 }
