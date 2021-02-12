@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace PingPong
 {
+    /// <summary>
+    /// Simplest realization of DI container
+    /// </summary>
     public class Injector : MonoBehaviour
     {
         [SerializeField] private PlayerInput _playerInput;
@@ -14,6 +17,7 @@ namespace PingPong
         [SerializeField] private ScorePresenter _scorePresenter;
         [SerializeField] private ScorePresenter _bestScorePresenter;
         [SerializeField] private SaveManager _saveManager;
+        [SerializeField] private DataManager _dataManager;
 
         private void Awake()
         {
@@ -24,7 +28,7 @@ namespace PingPong
             _paddle1.Init(_playerInput);
             _paddle2.Init(_playerInput);
             _ball.Init();
-            _levelManager.Init(_ball, _score);
+            _levelManager.Init(_ball, _score, _dataManager);
         }
     }
 }

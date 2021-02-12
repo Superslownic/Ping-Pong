@@ -651,7 +651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9304fb3cbc0269459059987732b2023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
 --- !u!114 &499050491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,6 +801,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f86c498a545cb43b0f2f933d643ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &563336244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563336245}
+  - component: {fileID: 563336246}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &563336245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563336244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2087478198}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563336246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563336244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7dbfb5cbce6a34e829dd54cfa6b86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballSettings:
+  - {fileID: 11400000, guid: a63bde7fcb4806a45ab4c4d7fa3088ea, type: 2}
+  - {fileID: 11400000, guid: 03f3018a6bfb6fc43873ea041325c089, type: 2}
+  - {fileID: 11400000, guid: eb19c4b0586dc76419638ccaf0563ff4, type: 2}
 --- !u!1 &570313949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2321,7 @@ MonoBehaviour:
   _scorePresenter: {fileID: 653682801}
   _bestScorePresenter: {fileID: 1450565565}
   _saveManager: {fileID: 522178554}
+  _dataManager: {fileID: 563336246}
 --- !u!1 &1833994218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2565,7 @@ Transform:
   - {fileID: 332918874}
   - {fileID: 112176057}
   - {fileID: 522178553}
+  - {fileID: 563336245}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

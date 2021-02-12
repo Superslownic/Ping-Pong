@@ -1,5 +1,4 @@
-﻿using Idler.Presenters;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PingPong
 {
@@ -7,14 +6,18 @@ namespace PingPong
     {
         private IBall _ball;
         private IScore _score;
+        private IBallSettingsContainer _ballSettings;
 
-        public void Init(IBall ball, IScore score)
+        public void Init(IBall ball, IScore score, IBallSettingsContainer ballSettings)
         {
             _ball = ball;
             _score = score;
+            _ballSettings = ballSettings;
 
             OutTrigger.OnTriggerEnter += OutCallback;
             _ball.OnPaddleTouched += PaddleTouchedCallback;
+
+            ResetBall();
             PushBall();
         }
 
@@ -41,6 +44,7 @@ namespace PingPong
         private void ResetBall()
         {
             _ball.SetPosition(Vector2.zero);
+            _ball.Setup(_ballSettings.GetRandomBall());
         }
 
         private void PushBall()

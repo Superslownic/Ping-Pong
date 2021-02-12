@@ -5,11 +5,10 @@ namespace PingPong
     [RequireComponent(typeof(Rigidbody2D))]
     public class PhysicsMovement : MonoBehaviour
     {
-        [SerializeField] private float _speed;
-
         public bool IsMoving { get; private set; }
         public Vector2 Direction { get; private set; }
 
+        private float _speed;
         private Rigidbody2D _rigidbody;
 
         public void Push(Vector2 direction)
@@ -21,6 +20,11 @@ namespace PingPong
         public void Stop()
         {
             IsMoving = false;
+        }
+
+        public void SetSpeed(float value)
+        {
+            _speed = value;
         }
 
         private void Awake()
