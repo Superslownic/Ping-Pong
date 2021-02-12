@@ -7,7 +7,7 @@ namespace PingPong
     [RequireComponent(typeof(Bouncing))]
     public class Ball : MonoBehaviour, IBall
     {
-        public event Action OnBounce;
+        public event Action OnPaddleTouched;
 
         private PhysicsMovement _physicsMovement;
         private Bouncing _bouncing;
@@ -37,9 +37,7 @@ namespace PingPong
         private void BounceCallback(Transform other)
         {
             if (other.HasComponent<Paddle>())
-            {
-
-            }
+                OnPaddleTouched?.Invoke();
         }
     }
 }
