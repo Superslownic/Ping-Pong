@@ -24,7 +24,7 @@ namespace PingPong
             _paddle1.Init(_playerInput);
             _paddle2.Init(_playerInput);
             _ball.Init();
-            _levelManager.Init(_ball, _score, _saveManager);
+            _levelManager.Init(_ball, _score);
         }
     }
 }

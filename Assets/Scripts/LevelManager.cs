@@ -7,13 +7,11 @@ namespace PingPong
     {
         private IBall _ball;
         private IScore _score;
-        private ISaveManager _saveManager;
 
-        public void Init(IBall ball, IScore score, ISaveManager saveManager)
+        public void Init(IBall ball, IScore score)
         {
             _ball = ball;
             _score = score;
-            _saveManager = saveManager;
 
             OutTrigger.OnTriggerEnter += OutCallback;
             _ball.OnPaddleTouched += PaddleTouchedCallback;
@@ -29,10 +27,7 @@ namespace PingPong
         private void OutCallback()
         {
             if (_score.CurrentValue > _score.BestValue)
-            {
                 _score.BestValue = _score.CurrentValue;
-                _saveManager.Save();
-            }
             _score.Reset();
             ResetBall();
             PushBall();

@@ -3,7 +3,7 @@ using Utility;
 
 namespace PingPong
 {
-    public class SaveManager : MonoBehaviour, ISaveManager
+    public class SaveManager : MonoBehaviour
     {
         private IScore _score;
 
@@ -21,13 +21,18 @@ namespace PingPong
             _score.BestValue = data.Get<uint>("BestScore");
         }
 
-        void ISaveManager.Save()
+        private void Save()
         {
             GameData data = new GameData();
 
             data.Add("BestScore", _score.BestValue);
 
             Serialization.SaveToBinnary<GameData>(data);
+        }
+
+        private void OnApplicationQuit()
+        {
+            Save();
         }
     }
 }
