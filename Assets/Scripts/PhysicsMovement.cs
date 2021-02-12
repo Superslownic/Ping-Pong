@@ -12,7 +12,7 @@ namespace PingPong
 
         private Rigidbody2D _rigidbody;
 
-        public void Move(Vector2 direction)
+        public void Push(Vector2 direction)
         {
             IsMoving = true;
             Direction = direction;
@@ -26,7 +26,6 @@ namespace PingPong
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            Move(new Vector2(0.5f, -0.5f));
         }
 
         private void Update()
